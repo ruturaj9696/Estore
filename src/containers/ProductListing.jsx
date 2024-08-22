@@ -25,7 +25,6 @@ const ProductListing = () => {
   // console.log("products", products);
   return (
     <div>
-      <div>ProductListing</div>
       <ProductComponent/>
     </div>
   );

@@ -9,11 +9,23 @@ const ProductComponent = () => {
   const renderList = products.map((product) => {
     return (
       <Link to={`/product/${product.id}`} key={product.id}>
-        <div key={product.id}>
-          <div className="bg-red-300 m-3 p-2">
-            <h2>{product.title}</h2>
-            <h2>{product.category}</h2>
-            <img src={product.image} alt="image" className="w-8 h-8" />
+        <div key={product.id} className="m-3">
+          <div className="bg-green-200 rounded-lg shadow-lg h-auto min-h-48 max-h-96 shadow-indigo-100 p-4 flex flex-col justify-between overflow-hidden">
+            <div className="flex-grow">
+              <h2 className="text-lg font-semibold truncate">
+                {product.title}
+              </h2>
+              <h2 className="text-sm font-medium truncate">
+                {product.category}
+              </h2>
+            </div>
+            <div className="mt-2 flex justify-center">
+              <img
+                src={product.image}
+                alt="image"
+                className="w-16 h-16 object-cover rounded-full"
+              />
+            </div>
           </div>
         </div>
       </Link>
@@ -21,7 +33,6 @@ const ProductComponent = () => {
   });
   return (
     <div>
-      <h2>Productcomponent</h2>
       <div className="grid grid-cols-4 gap-4">{renderList}</div>
     </div>
   );

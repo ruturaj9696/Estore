@@ -13,4 +13,8 @@ export const selectedProducts = (products) => {
   };
 };
 
-// Remove selector product will be created after some time
+export const removeSelectedProducts = () => {
+  return {
+    type: ActionTypes.REMOVE_SELECTED_PRODUCT,
+  };
+};
