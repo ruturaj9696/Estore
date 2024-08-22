@@ -1,16 +1,25 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./containers/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductListing from "./containers/ProductListing";
+import ProductDetails from "./containers/ProductDetails";
+import PagenotFound from "./containers/PagenotFound";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div className="bg-red-50  m-2 p-2  font-semibold">
+      <div>
         <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ProductListing />} />
+            <Route path="/product/:ProductId" element={<ProductDetails />} />
+            <Route path="*" element={<PagenotFound />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );
